@@ -1,59 +1,58 @@
-# Build applications with GitHub Copilot agent mode
+# Xây dựng ứng dụng với chế độ tác nhân GitHub Copilot
 
-<!-- ![](https://github.com/DevNoName9x/skills-build-applications-w-copilot-agent-mode/actions/workflows/0-start-course.yml/badge.svg?branch=main) -->
 <img src="https://github.com/user-attachments/assets/8c45e716-1d95-473b-8923-dbbbf0f924b2" alt="octofit-tracker-app" width="30%" height="30%"/>
 
-_Build an application with GitHub Copilot agent mode in less than an hour._
+_Xây dựng một ứng dụng với chế độ tác nhân GitHub Copilot trong vòng chưa đầy một giờ._
 
-## Welcome
+## Chào mừng
 
-People love how GitHub Copilot helps them write code faster and with fewer errors.
-But what if GitHub could create a full stack application for your job role based on requirements
-written in natural language.
-In this exercise, we will prompt GitHub Copilot agent mode to create us a complete application.
+Mọi người yêu thích cách GitHub Copilot giúp họ viết mã nhanh hơn và ít lỗi hơn.
+Nhưng điều gì sẽ xảy ra nếu GitHub có thể tạo một ứng dụng full-stack hoàn chỉnh cho vai trò công việc của bạn dựa trên các yêu cầu
+được viết bằng ngôn ngữ tự nhiên.
+Trong bài tập này, chúng ta sẽ nhắc chế độ tác nhân GitHub Copilot tạo cho chúng ta một ứng dụng hoàn chỉnh.
 
-- **Who is this for**: Intermediate developers familiar with GitHub Copilot, basic GitHub, and basic web development
-- **What you'll learn**: We'll introduce GitHub Copilot agent mode and how to use it for application development.
-- **What you'll build**: You'll use GitHub Copilot agent mode to create a fitness application as the gym teacher of a high school.
-- **How long**: This course takes less than one hour to complete.
+- **Dành cho**: Các nhà phát triển trung cấp đã quen thuộc với GitHub Copilot, GitHub cơ bản và phát triển web cơ bản
+- **Bạn sẽ học được gì**: Chúng tôi sẽ giới thiệu chế độ tác nhân GitHub Copilot và cách sử dụng nó để phát triển ứng dụng.
+- **Bạn sẽ xây dựng gì**: Bạn sẽ sử dụng chế độ tác nhân GitHub Copilot để tạo một ứng dụng thể dục với vai trò là giáo viên thể dục của một trường trung học.
+- **Thời gian**: Khóa học này mất chưa đầy một giờ để hoàn thành.
 
-In this exercise, you will:
+Trong bài tập này, bạn sẽ:
 
-1. Start up a preconfigured development environment for making a full stack application.
-2. Prompt in GitHub Copilot Chat and select the edit tab and select agent mode from the edit/agent drop down.
-3. Try creating the application with GPT-4o.
-4. Try other LLM models to see other output.
+1. Khởi động một môi trường phát triển được cấu hình sẵn để tạo một ứng dụng full-stack.
+2. Nhập lệnh trong GitHub Copilot Chat và chọn tab chỉnh sửa, sau đó chọn chế độ tác nhân từ menu thả xuống chỉnh sửa/tác nhân.
+3. Thử tạo ứng dụng bằng GPT-4o.
+4. Thử các model LLM khác để xem các đầu ra khác.
 
-### How to start this exercise
+### Cách bắt đầu bài tập này
 
-1. Right-click **Copy Exercise** and open the link in a new tab.
+1. Nhấp chuột phải vào **Sao chép bài tập** và mở liên kết trong một tab mới.
 
-   <a id="copy-exercise">
+    <a id="copy-exercise">
       <img src="https://img.shields.io/badge/📠_Copy_Exercise-AAA" height="25pt"/>
-   </a>
+    </a>
 
-2. In the new tab, most of the fields will automatically fill in for you.
+2. Trong tab mới, hầu hết các trường sẽ tự động được điền cho bạn.
 
-   - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository, as private repositories will use [Actions minutes](https://docs.github.chttps://github.com/DevNoName9x/skills-build-applications-w-copilot-agent-mode/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-   - Scroll down and click the **Create repository** button at the bottom of the form.
+    - Đối với chủ sở hữu, hãy chọn tài khoản cá nhân hoặc một tổ chức để lưu trữ kho lưu trữ.
+    - Chúng tôi khuyên bạn nên tạo một kho lưu trữ công khai, vì các kho lưu trữ riêng tư sẽ sử dụng [phút Actions](https://docs.github.chttps://github.com/DevNoName9x/skills-build-applications-w-copilot-agent-mode/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
+    - Cuộn xuống và nhấp vào nút **Create repository** ở cuối biểu mẫu.
 
-3. After your new repository is created, wait about 20 seconds for the exercise to be prepared and buttons updated. You will continue working from your copy of the exercise.
+3. Sau khi kho lưu trữ mới của bạn được tạo, hãy đợi khoảng 20 giây để bài tập được chuẩn bị và các nút được cập nhật. Bạn sẽ tiếp tục làm việc từ bản sao bài tập của mình.
 
-   - The **Copy Exercise** button will deactivate, changing to gray.
-   - The **Start Exercise** button will activate, changing to green.
-   - You will likely need to refresh the page.
+    - Nút **Copy Exercise** sẽ bị vô hiệu hóa, chuyển sang màu xám.
+    - Nút **Start Exercise** sẽ được kích hoạt, chuyển sang màu xanh lá cây.
+    - Bạn có thể cần làm mới trang.
 
-4. Click **Start Exercise**. Follow the step-by-step instructions and feedback will be provided as you progress.
+4. Nhấp vào **Start Exercise**. Thực hiện theo các hướng dẫn từng bước và phản hồi sẽ được cung cấp khi bạn tiến bộ.
 
-   <a id="start-exercise" href="https://github.com/DevNoName9x/skills-build-applications-w-copilot-agent-mode/issues/1">
+    <a id="start-exercise" href="https://github.com/DevNoName9x/skills-build-applications-w-copilot-agent-mode/issues/1">
       <img src="https://img.shields.io/badge/🚀_Start_Exercise-008000" height="25pt"/>
-   </a>
+    </a>
 
-> ❕ **Important:** The **Start Exercise** button will activate after copying the repository. You will probably need to refresh the page.
+> ❕ **Quan trọng:** Nút **Start Exercise** sẽ được kích hoạt sau khi sao chép kho lưu trữ. Bạn có thể cần làm mới trang.
 
 ---
 
-[Review the GitHub status page](https://www.githubstatus.com/)
+[Xem trang trạng thái GitHub](https://www.githubstatus.com/)
 
-&copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+&copy; 2025 GitHub &bull; [Quy tắc ứng xử](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [Giấy phép MIT](https://gh.io/mit)
