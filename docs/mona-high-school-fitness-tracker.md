@@ -1,32 +1,32 @@
-# Getting started - app frontend and backend creation
+# Bắt đầu - tạo frontend và backend ứng dụng
 
-## Explain to GitHub Copilot the goals and steps
+## Giải thích cho GitHub Copilot về mục tiêu và các bước
 
 ```text
-I want to build an monafit Tracker app that will include the following:
+Tôi muốn xây dựng một ứng dụng theo dõi monafit bao gồm:
 
-* User authentication and profiles
-* Activity logging and tracking
-* Team creation and management
-* Competitive leader board
-* Personalized workout suggestions
+* Xác thực người dùng và hồ sơ
+* Ghi nhật ký và theo dõi hoạt động
+* Tạo và quản lý nhóm
+* Bảng xếp hạng cạnh tranh
+* Gợi ý luyện tập cá nhân hóa
 
-It should be in one app
+Nó nên nằm trong một ứng dụng duy nhất
 
-generate instructions in this order
+tạo hướng dẫn theo thứ tự sau
 
-1. Create the frontend and backend in the monafit-tracker directory structure of this repository in one command
-2. Setup backend python venv and create a monafit-tracker/backend/requirements.txt file
-3. The monafit-tracker/backend directory will store the django project and app with the name monafit-tracker
-4. The Django project monafit-tracker directory will have all the backend components for the app
-5. Create the django app directly in the directory monafit_tracker/backend
-6. Setup the monafit-tracker/frontend directory will store the react app with no subdirectories
-7. Install react framework
-8. Install bootstrap and import it
-9. Commands to install mongodb via 'apt-get' 
-10. Commands start mongodb with the 'sudo service mongodb start' and 'sudo service mongodb status'
+1. Tạo frontend và backend trong cấu trúc thư mục monafit-tracker của kho lưu trữ này bằng một lệnh
+2. Thiết lập venv python backend và tạo tệp monafit-tracker/backend/requirements.txt
+3. Thư mục monafit-tracker/backend sẽ lưu trữ dự án và ứng dụng django có tên monafit-tracker
+4. Thư mục dự án Django monafit-tracker sẽ có tất cả các thành phần backend cho ứng dụng
+5. Tạo ứng dụng django trực tiếp trong thư mục monafit_tracker/backend
+6. Thiết lập thư mục monafit-tracker/frontend sẽ lưu trữ ứng dụng react mà không có thư mục con
+7. Cài đặt framework react
+8. Cài đặt bootstrap và import nó
+9. Các lệnh để cài đặt mongodb qua 'apt-get'
+10. Các lệnh khởi động mongodb bằng 'sudo service mongodb start' và 'sudo service mongodb status'
 
-The directory tree for the monafit Tracker App
+Cây thư mục cho ứng dụng monafit Tracker
 monafit-tracker/
 ├── backend/
 │   ├── venv/
@@ -46,7 +46,7 @@ monafit-tracker/
     ├── package.json
     └── README.md
 
-Create a requirements.txt with the following Python required packages
+Tạo một tệp requirements.txt với các gói Python cần thiết sau
 
 Django==4.1
 djangorestframework==3.14.0
@@ -74,20 +74,20 @@ webcolors==24.8.0
 webencodings==0.5.1
 websocket-client==1.8.0
 
-All of the backend django app will be in monafit_tracker and do NOT create another app of any kind
+Tất cả ứng dụng django backend sẽ nằm trong monafit_tracker và KHÔNG tạo bất kỳ ứng dụng nào khác
 
-Use a Python virtual environment and install all python dependencies from file monafit-tracker/backend/requirements.txt in this workspace
+Sử dụng môi trường ảo Python và cài đặt tất cả các dependency python từ tệp monafit-tracker/backend/requirements.txt trong workspace này
 
-The monafit-tracker/backend/requirements.txt already contains all Django requirements. Django, djongo, sqlparse
+Tệp monafit-tracker/backend/requirements.txt đã chứa tất cả các yêu cầu của Django. Django, djongo, sqlparse
 
-Layout the directory structure with no redundant backend and frontend subdirectories
+Bố trí cấu trúc thư mục mà không có các thư mục con backend và frontend dư thừa
 
-Use bootstrap for the frontend
+Sử dụng bootstrap cho frontend
 
-Let's think about this step by step
+Hãy nghĩ về điều này từng bước một
 ```
 
-### Commands to use to create the monafit Tracker structure
+### Các lệnh sử dụng để tạo cấu trúc monafit Tracker
 
 ```bash
 mkdir -p monafit-tracker/{backend,frontend}
@@ -108,35 +108,35 @@ sudo apt-get update && sudo apt-get install -y mongodb
 sudo service mongodb start && sudo service mongodb status
 ```
 
-## Initialize the database, setup database and install apps in settings.py, models, serializers, urls, and views
+## Khởi tạo database, thiết lập database và cài đặt các ứng dụng trong settings.py, models, serializers, urls, và views
 
-Type the following prompt in GitHub Copilot Chat:
+Nhập dòng lệnh sau vào GitHub Copilot Chat:
 
 ```text
-In our next steps lets think step by step and setup the following in this order
+Trong các bước tiếp theo, hãy nghĩ từng bước và thiết lập các mục sau theo thứ tự này
 
-1. Initialize the mongo monafit_db database and create a correct table structure for users, teams, activities, leaderboard, and workouts collections
-2. Make sure there is a unique id for primary key for the user collection 
-   ex. db.users.createIndex({ "email": 1 }, { unique: true })
-3. settings.py in our django project for mongodb monafit_db database including localhost and the port
-4. settings.py in our django project setup for all installed apps. ex djongo, monafit_tracker, rest_framework
-5. In monafit_tracker project setup and use command touch models.py, serializers.py, urls.py, and views.py for users, teams, activity, leaderboard, and workouts
-6. Generate code for models.py, serializers.py, and views.py and
-7. make sure urls.py has a root, admin, and api endpoints
+1. Khởi tạo database mongo monafit_db và tạo cấu trúc bảng chính xác cho các collection users, teams, activities, leaderboard và workouts
+2. Đảm bảo có một id duy nhất cho khóa chính của collection user
+    ví dụ: db.users.createIndex({ "email": 1 }, { unique: true })
+3. settings.py trong dự án django của chúng ta cho database mongodb monafit_db bao gồm localhost và port
+4. settings.py trong dự án django của chúng ta thiết lập cho tất cả các ứng dụng đã cài đặt. ví dụ djongo, monafit_tracker, rest_framework
+5. Trong dự án monafit_tracker, thiết lập và sử dụng lệnh touch models.py, serializers.py, urls.py và views.py cho users, teams, activity, leaderboard và workouts
+6. Tạo code cho models.py, serializers.py và views.py và
+7. đảm bảo urls.py có các endpoint root, admin và api
     urlpatterns = [
-        path('', api_root, name='api-root'),  # Root endpoint
-        path('admin/', admin.site.urls),  # Admin endpoint
-        path('api/', include(router.urls)),  # API endpoint
+        path('', api_root, name='api-root'),  # Endpoint gốc
+        path('admin/', admin.site.urls),  # Endpoint admin
+        path('api/', include(router.urls)),  # Endpoint API
     ]
 ```
 
-### MongoDB commands to initialize and setup `monafit_db`
+### Các lệnh MongoDB để khởi tạo và thiết lập `monafit_db`
 
 ```bash
 mongo --eval "db = db.getSiblingDB('monafit_db'); db.createCollection('users'); db.createCollection('teams'); db.createCollection('activity'); db.createCollection('leaderboard'); db.createCollection('workouts'); db.users.createIndex({ email: 1 }, { unique: true }); db.teams.createIndex({ name: 1 }, { unique: true }); db.activity.createIndex({ activity_id: 1 }, { unique: true }); db.leaderboard.createIndex({ leaderboard_id: 1 }, { unique: true }); db.workouts.createIndex({ workout_id: 1 }, { unique: true });"
 ```
 
-### Check the database collections
+### Kiểm tra các collection của database
 
 ```bash
 mongo --eval "db = db.getSiblingDB('monafit_db'); printjson(db.getCollectionNames());"
@@ -442,15 +442,15 @@ urlpatterns = [
 ]
 ```
 
-## Populate the databse with sample data
+## Điền dữ liệu mẫu vào cơ sở dữ liệu.
 
 ```text
-Let's use manage.py to get the database setup and populated based on fields in models.py
+Chúng ta sẽ sử dụng manage.py để thiết lập và điền dữ liệu vào cơ sở dữ liệu dựa trên các trường trong models.py
 
-- Create populate_db.py as a manage.py command so it initializes and deletes previous data and recreates it
-- populate_db.py creates users, teams, activity, leaderboard, and workouts
-- users will be super hero users
-- Include steps to migrate in the monafit_tracker project
+- Tạo populate_db.py như một lệnh manage.py để khởi tạo và xóa dữ liệu trước đó, sau đó tạo lại dữ liệu.
+- populate_db.py tạo người dùng, đội, hoạt động, bảng xếp hạng và bài tập.
+- Người dùng sẽ là những người dùng siêu anh hùng.
+- Bao gồm các bước di chuyển trong dự án monafit_tracker.
 ```
 
 ### Commands to create the directory structure for populate_db.py
