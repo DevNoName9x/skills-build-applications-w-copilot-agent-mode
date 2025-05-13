@@ -442,7 +442,7 @@ urlpatterns = [
 ]
 ```
 
-## Điền dữ liệu mẫu vào cơ sở dữ liệu.
+## Điền dữ liệu mẫu vào cơ sở dữ liệu
 
 ```text
 Chúng ta sẽ sử dụng manage.py để thiết lập và điền dữ liệu vào cơ sở dữ liệu dựa trên các trường trong models.py
@@ -462,10 +462,10 @@ touch monafit-tracker/backend/monafit_tracker/management/commands/__init__.py
 touch monafit-tracker/backend/monafit_tracker/management/commands/populate_db.py
 ```
 
-### Sample code for populate_db.py to populate the database
+### Mã ví dụ cho populate_db.py để điền dữ liệu vào cơ sở dữ liệu
 
-Mergington Physical Education sample data use for populate_db.py
-Should reside under monafit-tracker/backend/monafit_tracker/management/commands/populate_db.py
+Dữ liệu ví dụ của Mergington Physical Education được sử dụng cho populate_db.py
+Nên nằm trong monafit-tracker/backend/monafit_tracker/management/commands/populate_db.py
 
 ```python
 # FILE: monafit-tracker/backend/monafit_tracker/management/commands/populate_db.py
@@ -542,15 +542,15 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS('Successfully populated the database with test data.'))
 ```
 
-### Run the following commands to migrate the database and populate it with data
+### Chạy các lệnh sau để di chuyển cơ sở dữ liệu và điền dữ liệu vào nó
 
 ```bash
-python monafit-tracker/backend/manage.py monafit-tracker/backend/makemigrations
-python monafit-tracker/backend/manage.py monafit-tracker/backend/migrate
-python monafit-tracker/backendmanage.py monafit-tracker/backend/populate_db
+python monafit-tracker\backend\manage.py monafit-tracker\backend\makemigrations
+python monafit-tracker\backend\manage.py monafit-tracker\backend\migrate
+python monafit-tracker\backend\manage.py monafit-tracker\backend\populate_db
 ```
 
-## Using the Codespace endpoint to access the Django REST API endpoints
+## Sử dụng endpoint của Codespace để truy cập các endpoint của Django REST API
 
 ```text
 Let's do the following step by step
